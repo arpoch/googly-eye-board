@@ -1,0 +1,29 @@
+.header{
+    text-align: center;
+    cursor: none;
+    display: inline;
+    position: absolute;
+    left: 40%;
+    margin: 0;
+    /* border: 3px solid red; */
+}
+.title{
+    font-size: 1.7em;
+    font-family: Papyrus, fantasy;
+    display: inline;
+    /* border: 3px solid red; */
+}
+
+.word{
+    display: inline;
+    margin-left: 10px;
+    /* border: 3px solid blue; */
+}
+
+.box{
+    border: 0px;
+    outline: 0px;
+    font-size: 1.7em;
+    font-family: Papyrus, fantasy;
+    /* border-bottom: 2px solid rgba(128, 128, 128, 0.329); */
+}
