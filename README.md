@@ -2,7 +2,7 @@
 
 This project bring the 
 
-![octopus](/images\googly-eyed-octopus.PNG#gh-light-mode-only)
+![octopus](/images/googly-eyed-octopus.PNG#gh-light-mode-only)
 
 ## Project Structure 
 
