@@ -4,8 +4,8 @@ import GooglyEye from "./GooglyEye"
 import Drawing from "./Drawing";
 import Title from "./Title";
 
-class App extends React.Component {
-    render() {
+function App(){
+    
         return (
             <div className="App">
                 <Title />
@@ -22,6 +22,4 @@ class App extends React.Component {
             </div>
         );
     }
-}
-
 export default App;
