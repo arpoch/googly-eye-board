@@ -1,0 +1,36 @@
+.react-icons{
+    /* margin: 5px; */
+}
+.sidebar{
+    display: inline-flex;
+    height: 50px;
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    /*border: 1px solid red;*/
+}
+.sidebar-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    background-color:rgb(255, 255, 255);
+    border: solid 0.3px rgb(161, 161, 161);
+    border-radius: 4px;
+    /* border: 1px solid black; */
+}
+
+.sidebar-item{
+    box-sizing: content-box;
+    padding-top: .5rem;
+    width: 45px;
+    /* border: 1px solid red; */
+}
+.sidebar-item:hover{
+    background-image: linear-gradient(rgb(255, 255, 255) 20%, rgba(184, 182, 182, 0.863));
+}
+
+.collapse{
+    box-sizing: content-box;
+    /*border: 1px solid red;*/
+}
