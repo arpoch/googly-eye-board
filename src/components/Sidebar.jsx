@@ -20,12 +20,12 @@ const Sidebar = ({isPenClicked,isEraserClicked}) => {
             <div className="sidebar-container">
                 <div className="sidebar-item">
                     <IconContext.Provider value={{title: "Pen", size: "2.3em", className: 'react-icons'}}>
-                        <a>{displayPenIcon()}</a>
+                        <button>{displayPenIcon()}</button>
                     </IconContext.Provider>
                 </div>
                 <div className="sidebar-item">
                     <IconContext.Provider value={{size: "2.3em", className: 'react-icons'}}>
-                        <a>{displayEraserIcon()}</a>
+                        <button>{displayEraserIcon()}</button>
                     </IconContext.Provider>
                 </div>
             </div>
