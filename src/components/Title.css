@@ -25,5 +25,9 @@
     outline: 0px;
     font-size: 1.7em;
     font-family: Papyrus, fantasy;
+    background: transparent;
     /* border-bottom: 2px solid rgba(128, 128, 128, 0.329); */
+}
+.box::placeholder{
+    color: rgb(88, 87, 87);
 }
