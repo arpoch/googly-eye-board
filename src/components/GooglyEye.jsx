@@ -1,21 +1,14 @@
-import React from 'react';
 import './GooglyEye.css';
 
-class GooglyEye extends React.Component {
+function GooglyEye({eyeX, eyeY}){
 
-  render() {
+    console.log(eyeX+" "+eyeY);
     return (
         <div className="Eye-ball" >
-          <div className="Irs"
-            style=
-            {{
-              left: this.props.mouse.eyeX,
-              top: this.props.mouse.eyeY
-            }}>
+          <div className="Irs" style= {{ left: eyeX, top: eyeY }}>
           </div>
         </div>
     );
-  };
 }
 
 export default GooglyEye;
