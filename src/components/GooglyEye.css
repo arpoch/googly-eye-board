@@ -5,8 +5,8 @@
   margin: 0;
   position: absolute;
   overflow: hidden;
-  left: 50%;
-  top: 40%;
+  left: 50.5%;
+  top: 51%;
   background: linear-gradient(360deg, rgba(237,237,237,1) 13%, rgba(255,255,255,1) 25%, rgba(230,232,232,1) 100%); 
   border-radius: 50%;
 }
