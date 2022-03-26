@@ -1,63 +1,42 @@
-import React from "react";
+import {useEffect} from "react";
 
-class MouseTracker extends React.Component{
-  constructor(props){
-    super(props);
-    this.handleMouseMove = this.handleMouseMove.bind(this);
-    this.getX = this.getX.bind(this);
-    this.getY = this.getY.bind(this);
+function MouseTracker({setMouseX,setMouseY}){
 
-    this.state = { x: 0, y:0, eyeX: 0, eyeY: 0};
+  function handleMouseEvent(e){
+    setMouseX(getX(e.clientX));
+    setMouseY(getY(e.clientY));
   }
 
-  componentDidMount(){
-    window.addEventListener("mousemove",e => this.handleMouseMove(e));
-  }
+  useEffect(()=>{
+    window.addEventListener("mousemove",handleMouseEvent);
+    return () => {
+      window.removeEventListener("mousemove",handleMouseEvent);
+    }
+  },)
 
-  componentWillUnmount(){
-    window.removeEventListener("mousemove",this.handleMouseMove);
-  }
-
-  handleMouseMove(e){
-    this.setState({ 
-      x: e.clientX,
-      y: e.clientY
-    });
-    this.setState({ 
-      eyeX: this.getX(),
-      eyeY: this.getY()
-    });
-  }
-
-  getX() {
-    if ((this.state.x * 100 / window.innerWidth) < 20) {
+  function getX(clientX) {
+    if ((clientX * 100 / window.innerWidth) < 20) {
       return 20 + "%";
-    } else if ((this.state.x * 100 / window.innerWidth) > 80) {
+    } else if ((clientX * 100 / window.innerWidth) > 80) {
       return 80 + "%";
-    } else 
+    } else
     {
-      return (this.state.x) * 100 / window.innerWidth + '%';
+      return clientX * 100 / window.innerWidth + '%';
     }
   }
 
-  getY() {
-    if ((this.state.y * 100 / window.innerHeight) < 20) {
+  function getY(clientY) {
+    if ((clientY * 100 / window.innerHeight) < 20) {
       return 20 + "%";
-    } else if ((this.state.y * 100 / window.innerHeight) > 80) {
+    } else if ((clientY * 100 / window.innerHeight) > 80) {
       return 80 + "%";
-    } else 
+    } else
     {
-      return this.state.y * 100 / window.innerHeight + '%';
+      return clientY * 100 / window.innerHeight + '%';
     }
   }
 
-  render(){
-    return (
-      <>
-        {this.props.render(this.state)}
-      </>
-      );
-  }
+  return null;
 }
 
   export default MouseTracker;
