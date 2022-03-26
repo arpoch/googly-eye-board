@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import CursorTracker from "./CursorTracker";
 import GooglyEye from "./GooglyEye"
 import Drawing from "./Drawing";
@@ -6,19 +6,21 @@ import Title from "./Title";
 
 function App(){
     
-        return (
+    const [mouseX,setMouseX]=useState(0);
+    const [mouseY,setMouseY]=useState(0);
+
+    return (
             <div className="App">
+                <Drawing />
                 <Title />
-                <Drawing />   
                 <CursorTracker
-                    render=
-                    {(mouse) => (   //<= {return()}
-                        <>                           
-                            <GooglyEye mouse={mouse} />
-                        </>
-                    )
-                    }
-                />                
+                    setMouseX={setMouseX}
+                    setMouseY={setMouseY}
+                />
+                <GooglyEye
+                    eyeX={mouseX}
+                    eyeY={mouseY}
+                />
             </div>
         );
     }
