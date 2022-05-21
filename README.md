@@ -1,7 +1,7 @@
 # Googly Eye Drawing Board :eyes:
 
-A drawing board built using React.js with an exiciting additon of a googly eye that make it even more fun and enjoyable.
-Play around and bring out your creative side!
+A drawing board built using React.js with the exciting addition of a googly eye that makes it even more fun and enjoyable.
+Play around and bring out your creative side! 
 
 ![octopus](/images/googly-eyed-octopus.PNG#gh-light-mode-only)
 
@@ -47,4 +47,4 @@ npm start
 
 ## Contributions
 
-Feel free to open an issue related to the documentation or the code. Please don't not remove any comments nor change the formatting of the code.
+Feel free to open an issue related to the documentation or the code. Please don't remove any comments nor change the formatting of the code.
