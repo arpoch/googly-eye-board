@@ -2,7 +2,7 @@ import {IconContext} from "react-icons";
 import {BsPen, BsPenFill} from "react-icons/bs";
 import {useContext} from "react";
 import PenViewModel from "../viewmodel/PenViewModel"
-import {SidebarContext} from "../Model/SidebarStateStore";
+import {SidebarContext} from "../model/SidebarStateStore";
 
 function Pen({canvasViewModel}){
     //TODO Optimise the re-rendering of context

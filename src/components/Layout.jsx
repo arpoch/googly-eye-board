@@ -1,7 +1,7 @@
 import Title from "./Title";
 import GooglyEye from "./GooglyEye";
 import Sidebar from "./Sidebar";
-import SidebarStateStore from "../Model/SidebarStateStore";
+import SidebarStateStore from "../model/SidebarStateStore";
 
 function Layout({canvasViewModel}) {
 

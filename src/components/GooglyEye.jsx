@@ -1,6 +1,6 @@
 import './GooglyEye.css';
 import {useContext, useEffect, useState} from "react";
-import {SidebarContext} from "../Model/SidebarStateStore";
+import {SidebarContext} from "../model/SidebarStateStore";
 
 function GooglyEye(){
 

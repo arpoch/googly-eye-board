@@ -1,4 +1,4 @@
-import {SidebarContext} from "../Model/SidebarStateStore";
+import {SidebarContext} from "../model/SidebarStateStore";
 import {useContext} from "react";
 import {RiEraserLine, RiEraserFill} from 'react-icons/ri';
 import {IconContext} from "react-icons";

@@ -1,7 +1,7 @@
 import {useContext} from "react";
 import {IconContext} from "react-icons";
 import BackgroundViewModel from "../viewmodel/BackgroundViewModel";
-import {SidebarContext} from "../Model/SidebarStateStore";
+import {SidebarContext} from "../model/SidebarStateStore";
 import {BsImage, BsImageFill} from "react-icons/all";
 import penViewModel from "../viewmodel/PenViewModel";
 

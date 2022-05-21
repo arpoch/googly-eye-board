@@ -2,7 +2,7 @@ import React, {useCallback, useContext, useMemo, useRef, useState} from "react";
 import Layout from "./Layout";
 import CanvasViewModel from "../viewmodel/CanvasViewModel";
 import "./App.css"
-import CanvasStateStore from "../Model/CanvasStateStore";
+import CanvasStateStore from "../model/CanvasStateStore";
 
 function App() {
 

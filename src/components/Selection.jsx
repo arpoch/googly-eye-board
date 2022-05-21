@@ -1,6 +1,6 @@
 import {IconContext} from "react-icons";
 import {useContext} from "react";
-import {SidebarContext} from "../Model/SidebarStateStore";
+import {SidebarContext} from "../model/SidebarStateStore";
 import {GiArrowCursor, GrCursor} from "react-icons/all";
 import SelectionViewModel from "../viewmodel/SelectionViewModel";
 
