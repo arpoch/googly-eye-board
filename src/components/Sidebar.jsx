@@ -1,32 +1,25 @@
-import {BsPen, BsPenFill} from 'react-icons/bs';
-import {RiEraserLine, RiEraserFill} from 'react-icons/ri';
-import {IconContext} from "react-icons";
 import "./Sidebar.css";
+import Pen from "./Pen";
+import Eraser from "./Eraser";
+import Background from "./Background";
+import Selection from "./Selection";
 
-const Sidebar = ({isPenClicked,isEraserClicked}) => {
-
-    function displayPenIcon(){
-        if(isPenClicked) return <BsPenFill/>
-        else return <BsPen/>
-    }
-
-    function displayEraserIcon(){
-        if(isEraserClicked) return <RiEraserFill/>
-        else return <RiEraserLine/>
-    }
+const Sidebar = ({canvasViewModel}) => {
 
     return (
         <div className='sidebar'>
             <div className="sidebar-container">
                 <div className="sidebar-item">
-                    <IconContext.Provider value={{title: "Pen", size: "2.3em", className: 'react-icons'}}>
-                        <button>{displayPenIcon()}</button>
-                    </IconContext.Provider>
+                    <Pen canvasViewModel={canvasViewModel} />
                 </div>
                 <div className="sidebar-item">
-                    <IconContext.Provider value={{size: "2.3em", className: 'react-icons'}}>
-                        <button>{displayEraserIcon()}</button>
-                    </IconContext.Provider>
+                    <Eraser canvasViewModel={canvasViewModel} />
+                </div>
+                <div className="sidebar-item">
+                    <Background canvasViewModel={canvasViewModel} />
+                </div>
+                <div className="sidebar-item">
+                    <Selection canvasViewModel={canvasViewModel} />
                 </div>
             </div>
             <div className='collapse'>
