@@ -1,57 +1,55 @@
 import './GooglyEye.css';
-import {useContext, useEffect, useState} from "react";
+import {useContext, useEffect} from "react";
 import {SidebarContext} from "../model/SidebarStateStore";
+import GooglyEyeViewModel from "../viewmodel/GooglyEyeViewModel";
+import {IconContext} from "react-icons";
+import { GrAdd } from "react-icons/all";
+import {GoogleEyeContext} from "../model/GooglyEyeStateStore";
 
-function GooglyEye(){
+function GooglyEye({canvasViewModel}){
 
+    //Cause render each time value changes
     const sidebarContext = useContext(SidebarContext);
-    const [eyePosition,setEyePosition]=useState({x: "", y:""});
+    const googleEyeContext =  useContext(GoogleEyeContext);
 
-    function handleMouseEvent(e){
-        setEyePosition({x:getX(e.clientX), y:getY(e.clientY)});
-    }
-
-    function handleContainerClick(){
-        if(sidebarContext.states.Select.isSelected){
-        }else {
-        }
-    }
+    const googlyEyeViewModel = new GooglyEyeViewModel(sidebarContext,googleEyeContext,canvasViewModel);
 
     useEffect(() => {
-        window.addEventListener("mousemove", handleMouseEvent);
-        return () => {
-            window.removeEventListener("mousemove", handleMouseEvent);
-        }
-    },[]);
+        const controller = new AbortController();
+        //Works on initial render only
+        document.getElementsByClassName
+        ("message")[0].addEventListener("animationend",()=>{
+            document.getElementsByClassName("message")[0].style.display = "none";
+        },{once:true});
 
-    function getX(clientX) {
-        if ((clientX * 100 / window.innerWidth) < 20) {
-            return 20 + "%";
-        } else if ((clientX * 100 / window.innerWidth) > 80) {
-            return 80 + "%";
-        } else {
-            return clientX * 100 / window.innerWidth + '%';
-        }
+        document.getElementsByClassName("canvas")[0].addEventListener("mousemove", (e) =>{
+                googlyEyeViewModel.setIrsPosition(e.clientX,e.clientY);
+                //GooglyEyeViewModel.setMousePosition(e.clientX,e.clientY);
+            }
+            ,{signal: controller.signal});
+        return () => {controller.abort();}
+    },);
+
+    function handleClick(){
+        googlyEyeViewModel.addGoogleEye();
     }
 
-    function getY(clientY) {
-        if ((clientY * 100 / window.innerHeight) < 20) {
-            return 20 + "%";
-        } else if ((clientY * 100 / window.innerHeight) > 80) {
-            return 80 + "%";
-        } else {
-            return clientY * 100 / window.innerHeight + '%';
-        }
+    function setDisplayIcon(){
+        hideBorders();
+        return <GrAdd/>
+    }
+
+    function hideBorders(){
+        googlyEyeViewModel.hideEyeContainerBorders();
     }
 
     return (
-        <div className={"container-box"} onClick={handleContainerClick}>
-            <div className="Eye-ball" >
-                <div className="Irs" style= {{ left: eyePosition.x, top: eyePosition.y }}>
-                </div>
-            </div>
-        </div>
-
+        <>
+            <IconContext.Provider value={{title: "Pen", size: "2.3em", className: 'react-icons'}}>
+                <button className={"sidebar-button"} onClick={handleClick}>{setDisplayIcon()}</button>
+                <span className={"message"}><br/>Add a googly eye to make things more fun!</span>
+            </IconContext.Provider>
+        </>
     );
 }
 

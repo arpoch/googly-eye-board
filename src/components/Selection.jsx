@@ -23,8 +23,8 @@ function Selection({canvasViewModel}){
 
     return(
         <>
-            <IconContext.Provider value={{title: "Pen", size: "2.3em", className: 'react-icons'}}>
-                <button onClick={handleClick}>{setDisplayIcon()}</button>
+            <IconContext.Provider value={{title: "Select", size: "2.3em", className: 'react-icons'}}>
+                <button className={"sidebar-button"} onClick={handleClick}>{setDisplayIcon()}</button>
             </IconContext.Provider>
         </>
     );

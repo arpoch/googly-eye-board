@@ -3,6 +3,7 @@ import React, {useReducer} from "react";
 const actions = {
     PEN:"PEN",
     ERASER:"ERASER",
+    ERASER_PROPERTIES: "ERASER_PROPERTIES",
     BACKGROUND: "BACKGROUND",
     SELECT: "SELECT",
 }
@@ -14,6 +15,9 @@ const initialState = {
     },
     Eraser: {
         isEraserClicked:false,
+        properties: {
+            arcRadius: 5,
+        }
     },
     Background: {
         isBackgroundClicked: false,
@@ -104,6 +108,17 @@ function reducer(state,action){
                     isPenClicked: false,
                 }
             };
+        case actions.ERASER_PROPERTIES:
+            return {
+                ...state,
+                Eraser: {
+                    ...state.Eraser,
+                    properties:{
+                        arcRadius: action.payload,
+                    }
+                }
+            };
+
 
         default:
             return state;
@@ -127,6 +142,9 @@ function SidebarStateStore({children}){
         },
         handleSelection: ()=>{
             dispatch({type:actions.SELECT});
+        },
+        handleEraserProperties: (radius)=>{
+          dispatch({type:actions.ERASER_PROPERTIES ,payload:radius})
         }
     };
 

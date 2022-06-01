@@ -1,45 +1,37 @@
-import CanvasViewModel from "./CanvasViewModel";
 
 class PenViewModel{
 
-    context = null;
+    sidebarContext = null;
     canvasViewModel = null;
+    propsContext = null;
 
-    constructor(context,canvasViewModel) {
-        this.context = context;
+    constructor(propsContext,sidebarContext,canvasViewModel) {
+        this.propsContext = propsContext;
+        this.sidebarContext = sidebarContext;
         this.canvasViewModel = canvasViewModel;
     }
 
     handlePenClick(){
-        this.context.handlePenClick();
+        this.sidebarContext.handlePenClick();
     }
 
     getPenClick(){
-        return this.context.states.Pen.isPenClicked;
-    }
-
-    defaultPenProperties(){
-        this.setPenProperties("black",0.7,"round");
-    }
-
-    setPenProperties(stroke,width,cap){
-        const canvas = CanvasViewModel.canvas;
-        if(canvas==null) {
-            console.log("Canvas not initialized");
-            return;
-        }
-        canvas.strokeStyle = stroke;
-        canvas.width = width;
-        canvas.cap = cap;
+        return this.sidebarContext.states.Pen.isPenClicked;
     }
 
     startDrawing(){
-        this.defaultPenProperties();
         this.canvasViewModel.startDrawing(this.getPenClick());
     }
 
     stopDrawing(){
         this.canvasViewModel.stopDrawing(this.getPenClick());
+    }
+
+    setPenProperties(){
+        this.canvasViewModel.setCanvasProperties(
+            this.propsContext.states.PenProps.color,
+            this.propsContext.states.PenProps.lineWidth
+        );
     }
 }
 

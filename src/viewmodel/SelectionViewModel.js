@@ -17,9 +17,6 @@ class SelectionViewModel{
       return this.context.states.Select.isSelected;
     }
 
-    addBackground(){
-
-    }
 }
 
 export default SelectionViewModel;

@@ -3,12 +3,13 @@
     cursor: none;
     display: inline;
     position: absolute;
-    left: 40%;
+    top: 40%;
+    left: 30%;
     margin: 0;
     /* border: 3px solid red; */
 }
 .title{
-    font-size: 1.7em;
+    font-size: 5em;
     font-family: Papyrus, fantasy;
     display: inline;
     /* border: 3px solid red; */
@@ -20,14 +21,27 @@
     /* border: 3px solid blue; */
 }
 
-.box{
+#box{
     border: 0px;
     outline: 0px;
-    font-size: 1.7em;
+    font-size: 3.5em;
     font-family: Papyrus, fantasy;
     background: transparent;
     /* border-bottom: 2px solid rgba(128, 128, 128, 0.329); */
 }
-.box::placeholder{
+#box::placeholder{
     color: rgb(88, 87, 87);
+}
+
+#Page{
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    display: none;
+    background-color: white;
+    border: 0;
+    border-radius: 2.3em;
+    /*width: 70px;*/
+    /*height: 70px;*/
+    /*border: 1px solid black;*/
 }

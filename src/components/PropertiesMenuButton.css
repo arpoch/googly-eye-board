@@ -1,0 +1,13 @@
+
+.props-menu-button{
+    position: relative;
+    padding: 0px;
+    background-color: white;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+}
+
+.props-menu-button:hover{
+    background-image: linear-gradient(rgb(255, 255, 255) 90%, rgba(184, 182, 182, 0.863));
+}

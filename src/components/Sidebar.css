@@ -1,12 +1,47 @@
-.react-icons{
-    /* margin: 5px; */
+
+.container{
+    position: absolute;
+    left: 40%;
+    bottom: 1%;
+    border-radius: 15px;
+    background-color: transparent;
+    /*border: 1px solid black;*/
 }
+
+.menu{
+    height: 0.85em;
+    display: flex;
+    border: 0;
+    background-color: transparent;
+    /*border-radius: 10px;*/
+}
+
+.menu-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    /*border-radius: 10px;*/
+    background-color: transparent;
+    /*height: 13px;*/
+}
+
+.menu-item{
+    box-sizing: border-box;
+    /*border-radius: 10px;*/
+    width: 45px;
+    height: 100%;
+    background-color: transparent;
+    /*height: 13px;*/
+
+}
+
 .sidebar{
     display: inline-flex;
-    height: 50px;
-    position: absolute;
+    position: relative;
     bottom: 0px;
-    left: 40%;
+    border-radius: 5px;
+    box-shadow: 0px 12px 25px #c4c4c4;
     /*border: 1px solid red;*/
 }
 .sidebar-container{
@@ -15,22 +50,30 @@
     flex-wrap: wrap;
     box-sizing: border-box;
     background-color:rgb(255, 255, 255);
-    border: solid 0.3px rgb(161, 161, 161);
-    border-radius: 4px;
+    border-bottom: solid 1px rgb(161, 161, 161);
+    border-left: solid 1px rgb(161, 161, 161);
+    border-right: solid 1px rgb(161, 161, 161);
+    border-radius: 5px;
     /* border: 1px solid black; */
 }
 
 .sidebar-item{
     box-sizing: content-box;
-    padding-top: .5rem;
+    border-radius: 5px;
     width: 45px;
-    /* border: 1px solid red; */
+    /*border: 1px solid blue;*/
 }
-.sidebar-item:hover{
-    background-image: linear-gradient(rgb(255, 255, 255) 20%, rgba(184, 182, 182, 0.863));
+/*.sidebar-item:hover{*/
+/*    background-image: linear-gradient(rgb(255, 255, 255) 20%, rgba(184, 182, 182, 0.863));*/
+/*}*/
+
+.sidebar-button{
+    background-color: white;
+    border-radius: 5px;
+    /*height: 2.9em;*/
+    border: 0px;
 }
 
-.collapse{
-    box-sizing: content-box;
-    /*border: 1px solid red;*/
+.sidebar-button:hover{
+    background-image: linear-gradient(rgb(255, 255, 255) 20%, rgba(184, 182, 182, 0.863));
 }

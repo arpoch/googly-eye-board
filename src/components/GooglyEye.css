@@ -1,35 +1,125 @@
-.container-box {
+.top-border{
+  border: 1px solid #00b2ff;
+  position: relative;
+  float: top;
+  margin-bottom: 3px;
+  cursor: n-resize;
+  display: none;
+}
+
+.left-border{
+  border: 1px solid #00b2ff;
+  position: relative;
+  float: left;
+  width: 0;
+  height: 100%;
+  margin-right: 3px;
+  cursor: w-resize;
+  display: none;
+}
+
+.right-border{
+  border: 1px solid #00b2ff;
+  position: relative;
+  float: right;
+  width: 0;
+  height: 100%;
+  margin-left: 3px;
+  cursor: e-resize;
+  display: none;
+}
+
+.bottom-border{
+  border: 1px solid #00b2ff;
+  position: relative;
+  float: bottom;
+  margin-top: 4px;
+  cursor: s-resize;
+  display: none;
+}
+
+
+.eye-container {
   position: absolute;
   overflow: hidden;
-  left: 45%;
-  top: 51%;
-  border: 1px solid red;
+  height: 120px;
+  width: 115px;
+  left: 50%;
+  top: 50%;
+  /*transition: 2s;*/
+  transform: translate3d(-50%,-50%,0);
   padding: 10px;
 }
 
 .Eye-ball {
-  height: 115px;
-  width: 95px;
   margin: 0;
   overflow: hidden;
+  position: relative;
+  top: 1px;
   background: linear-gradient(360deg, rgba(237,237,237,1) 13%, rgba(255,255,255,1) 25%, rgba(230,232,232,1) 100%); 
   border-radius: 50%;
+  height: 100%;
   /*resize: both;*/
-
+  /*box-sizing: border-box;*/
 }
 
-.Eye-ball:hover {
-  cursor: none;
-}
+/*.Eye-ball:hover {*/
+/*  cursor: none;*/
+/*}*/
 
 .Irs{
-  height: 60px;
-  width: 60px;
+  height: 72px;
+  width: 72px;
   /* assets: linear-gradient(360deg, rgb(192, 114, 114) 13%, rgb(183, 88, 196) 25%, rgb(103, 173, 173) 100%);  */
   background-color: black;
   position: relative;
-  transform: translate(-50%,-50%);
+  transform: translate3d(-50%,-50%,0);
   border-radius: 100%;
 }
 
+.message{
+  position: absolute;
+  left: 75px;
+  bottom: 140%;
+  width: 400px;
+  height: 75px;
+  text-align: center;
+  font-size: 20px;
+  font-family: Georgia, serif;
+  border-radius: 10px;
+  animation-name: add-message;
+  animation-duration: 7s;
+  animation-fill-mode: forwards;
+  background-color: white;
+  border: 1px solid #606060;
+}
+
+.message:after{
+  position: absolute;
+  left: 22px;
+  top: 93%;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 20px solid white;
+  content: '';
+  height: 0;
+  width: 0;
+}
+
+.message:before{
+  position: absolute;
+  left: 22px;
+  top: 95%;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 20px solid #606060;
+  content: '';
+  height: 0;
+  width: 0;
+}
+
+@keyframes add-message {
+  from{opacity: 1}
+  to{opacity: 0}
+}
 

@@ -1,0 +1,83 @@
+
+.pen-menu{
+    display: none;
+    position: absolute;
+    border: 1px solid black;
+    width: 200px;
+    height: 245px;
+    border-radius: 20px;
+    bottom: 130%;
+    left: 5%;
+    background-color: rgba(255, 255, 255, 0.34);
+}
+
+.pen-menu:after{
+    content: '';
+    position: absolute;
+    top: 95%;
+    left: 5px;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 25px solid white;
+}
+
+.pen-menu:before{
+    content: '';
+    position: absolute;
+    top: 96%;
+    left: 5px;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 25px solid black;
+}
+
+.palette{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.swatch{
+    position: relative;
+    padding: 0;
+    margin-top: 20px;
+    margin-left: 13px;
+    margin-right: 5px;
+    height: 30px;
+    width: 30px;
+    border-radius: 30px;
+    border: transparent;
+}
+.active{
+    border: 3px solid #00ffaf;
+}
+/*.swatch:active{*/
+/*    border: 1px solid cornflowerblue;*/
+/*}*/
+
+.line-width{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-basis: auto;
+    flex-wrap: wrap;
+    margin: 10px 5px 0px 5px;
+}
+
+.dot-container{
+    width: 55px;
+    height: 45px;
+    /*border: 1px solid rgba(225, 225, 225, 0.63);*/
+    /*border-radius: 60px;*/
+}
+
+.slider-container{
+    position: relative;
+}
+
+.text{
+    margin: 0 0 0 5px;
+    font-size: 0.9em;
+}
+
