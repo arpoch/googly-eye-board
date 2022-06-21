@@ -1,22 +1,23 @@
 {
   "files": {
-    "main.css": "/googly-eye-board/static/css/main.30c3de9d.chunk.css",
-    "main.js": "/googly-eye-board/static/js/main.49ae963d.chunk.js",
-    "main.js.map": "/googly-eye-board/static/js/main.49ae963d.chunk.js.map",
-    "runtime-main.js": "/googly-eye-board/static/js/runtime-main.5a47cb1f.js",
-    "runtime-main.js.map": "/googly-eye-board/static/js/runtime-main.5a47cb1f.js.map",
-    "static/js/2.cf1d7429.chunk.js": "/googly-eye-board/static/js/2.cf1d7429.chunk.js",
-    "static/js/2.cf1d7429.chunk.js.map": "/googly-eye-board/static/js/2.cf1d7429.chunk.js.map",
-    "static/js/3.98bf6072.chunk.js": "/googly-eye-board/static/js/3.98bf6072.chunk.js",
-    "static/js/3.98bf6072.chunk.js.map": "/googly-eye-board/static/js/3.98bf6072.chunk.js.map",
+    "main.css": "/googly-eye-board/static/css/main.2f1d360d.chunk.css",
+    "main.js": "/googly-eye-board/static/js/main.1fec8f23.chunk.js",
+    "main.js.map": "/googly-eye-board/static/js/main.1fec8f23.chunk.js.map",
+    "runtime-main.js": "/googly-eye-board/static/js/runtime-main.af103e12.js",
+    "runtime-main.js.map": "/googly-eye-board/static/js/runtime-main.af103e12.js.map",
+    "static/js/2.eba91035.chunk.js": "/googly-eye-board/static/js/2.eba91035.chunk.js",
+    "static/js/2.eba91035.chunk.js.map": "/googly-eye-board/static/js/2.eba91035.chunk.js.map",
+    "static/js/3.cc5bbac2.chunk.js": "/googly-eye-board/static/js/3.cc5bbac2.chunk.js",
+    "static/js/3.cc5bbac2.chunk.js.map": "/googly-eye-board/static/js/3.cc5bbac2.chunk.js.map",
     "index.html": "/googly-eye-board/index.html",
-    "static/css/main.30c3de9d.chunk.css.map": "/googly-eye-board/static/css/main.30c3de9d.chunk.css.map",
-    "static/js/2.cf1d7429.chunk.js.LICENSE.txt": "/googly-eye-board/static/js/2.cf1d7429.chunk.js.LICENSE.txt"
+    "static/css/main.2f1d360d.chunk.css.map": "/googly-eye-board/static/css/main.2f1d360d.chunk.css.map",
+    "static/js/2.eba91035.chunk.js.LICENSE.txt": "/googly-eye-board/static/js/2.eba91035.chunk.js.LICENSE.txt",
+    "static/media/GooglyEye.css": "/googly-eye-board/static/media/delete-icon.b6a06207.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.5a47cb1f.js",
-    "static/js/2.cf1d7429.chunk.js",
-    "static/css/main.30c3de9d.chunk.css",
-    "static/js/main.49ae963d.chunk.js"
+    "static/js/runtime-main.af103e12.js",
+    "static/js/2.eba91035.chunk.js",
+    "static/css/main.2f1d360d.chunk.css",
+    "static/js/main.1fec8f23.chunk.js"
   ]
 }
