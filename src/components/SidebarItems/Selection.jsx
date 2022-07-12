@@ -1,8 +1,9 @@
 import {IconContext} from "react-icons";
 import {useContext} from "react";
-import {SidebarContext} from "../model/SidebarStateStore";
-import {GiArrowCursor, GrCursor} from "react-icons/all";
-import SelectionViewModel from "../viewmodel/SelectionViewModel";
+import {SidebarContext} from "../../binder/SidebarStateStore";
+import {GiArrowCursor} from "react-icons/gi";
+import {GrCursor} from "react-icons/gr";
+import SelectionViewModel from "../../viewmodel/SelectionViewModel";
 
 function Selection({canvasViewModel}){
     //TODO Optimise the re-rendering of context

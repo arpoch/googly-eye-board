@@ -1,8 +1,9 @@
-import React, {useCallback, useContext, useRef} from "react";
+import React, {useCallback, useContext, useEffect, useRef} from "react";
 import CanvasViewModel from "../viewmodel/CanvasViewModel";
-import {CanvasContext} from "../model/CanvasStateStore";
-import Sidebar from "./Sidebar";
-import SidebarStateStore from "../model/SidebarStateStore";
+import {CanvasContext} from "../binder/CanvasStateStore";
+import Sidebar from "./Sidebar/Sidebar";
+import SidebarStateStore from "../binder/SidebarStateStore";
+import "./Canvas.css";
 
 function Canvas() {
 
@@ -10,14 +11,30 @@ function Canvas() {
     const canvasContext = useContext(CanvasContext);
     const canvasViewModel = new CanvasViewModel(canvasContext);
 
-    console.log("creating");
+    useEffect(()=>{
+        window.addEventListener("resize",()=>{
+            if(ref.current!=null){
+                ref.current.width = window.innerWidth;
+                ref.current.height = window.innerHeight;
+            }
+        })
+    },[]);
 
     const canvasRef = useCallback((current)=>{
+        function setAttributes(){
+            if(localStorage.getItem("mode")==="black"){
+                document.documentElement.setAttribute("theme-mode","dark");
+            }else{
+                document.documentElement.setAttribute("theme-mode","light");
+            }
+        }
+
         if(current!=null && ref.current!==current) {
-            console.log("Rendered")
             ref.current = current;
             current.width = window.innerWidth;
             current.height = window.innerHeight;
+            current.style.backgroundColor = localStorage.getItem("mode");
+            setAttributes();
             const context = current.getContext('2d');
             CanvasViewModel.setCanvas(context);
         }
@@ -28,7 +45,7 @@ function Canvas() {
             <canvas
                 className="canvas"
                 ref={canvasRef}
-                style={{position: "absolute" }}
+                style={{position: "relative"}}
                 onMouseMove={canvasViewModel.handleMouseMoves}
                 onMouseDown={canvasViewModel.handleMouseDown}
                 onMouseUp={canvasViewModel.handleMouseUp}

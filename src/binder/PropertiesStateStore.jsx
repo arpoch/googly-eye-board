@@ -3,17 +3,18 @@ import React, {useReducer} from "react";
 const actions={
     LINE_WIDTH:"LINE_WIDTH",
     COLOR:"COLOR",
+    ERASER_COLOR: "ERASER_COLOR",
 }
 
 const initState={
     PenProps:{
         lineWidth: 2,
-        color: "black",
+        color: "",
         cap: "round",
     },
     EraserProps:{
-      color: "white",
-      radius: 5,
+      color: "",
+      radius: 10,
     },
 }
 
@@ -34,7 +35,16 @@ function reducer(state,action){
                     ...state.PenProps,
                     color: action.payload,
                 }
+            };
+        case actions.ERASER_COLOR:
+            return {
+                ...state,
+                EraserProps:{
+                    ...state.EraserProps,
+                    color: action.payload,
+                }
             }
+
         default:
             return state;
     }
@@ -52,6 +62,9 @@ function PropertiesStateStore({children}){
         handleLineColor: (value)=>{
             dispatch({type: actions.COLOR, payload: value});
         },
+        handleEraserColor:(value)=>{
+            dispatch({type: actions.ERASER_COLOR, payload: value});
+        }
     }
     return(
         <PropsContext.Provider value={value}>

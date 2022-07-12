@@ -1,0 +1,33 @@
+html[theme-mode="light"]{
+    --ri-color: #ffb800
+}
+
+html[theme-mode="dark"]{
+    --ri-color: #b0b0b0
+}
+
+.ri-theme-mode{
+    color: var(--ri-color);
+}
+
+.dark-mode{
+    position: sticky;
+    /*flex: 1 100%;*/
+    background-color: transparent;
+    align-self: end;
+}
+
+.mode{
+    height: 3.5em;
+    width: 3.5em;
+    float: right;
+    margin: 2em 3em 0 0;
+    border-radius: 3.5em;
+    background-color: transparent;
+    border: 0;
+    padding: 0;
+}
+
+.mode:hover{
+    cursor: pointer;
+}

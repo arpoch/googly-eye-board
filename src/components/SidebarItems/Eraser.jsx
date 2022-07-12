@@ -1,9 +1,9 @@
-import {SidebarContext} from "../model/SidebarStateStore";
+import {SidebarContext} from "../../binder/SidebarStateStore";
 import {useContext} from "react";
 import {RiEraserLine, RiEraserFill} from 'react-icons/ri';
 import {IconContext} from "react-icons";
-import EraserViewModel from "../viewmodel/EraserViewModel";
-import {PropsContext} from "../model/PropertiesStateStore";
+import EraserViewModel from "../../viewmodel/EraserViewModel";
+import {PropsContext} from "../../binder/PropertiesStateStore";
 
 
 function Eraser({canvasViewModel}){
@@ -16,7 +16,7 @@ function Eraser({canvasViewModel}){
         eraserViewModel.handleEraserClick();
     }
 
-    function setDisplayIcon(){
+    function setDisplayIcon() {
         if(eraserViewModel.getEraserClick()) {
             eraserViewModel.startErasing();
             return <RiEraserFill />

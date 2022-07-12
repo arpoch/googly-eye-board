@@ -2,7 +2,8 @@ import React, {useReducer} from "react";
 
 const actions = {
     SET_CANVAS: "SET_CANVAS",
-    SET_MOUSE_POS: "SET_MOUSE_POSITON",
+    SET_MOUSE_POS: "SET_MOUSE_POSITION",
+    SET_BG_COLOR: "SET_BG_COLOR",
 }
 
 const initState = {
@@ -11,7 +12,8 @@ const initState = {
         mousePos: {
             x: 0,
             y: 0,
-        }
+        },
+        bgColor: "white",
     }
 }
 
@@ -26,6 +28,13 @@ function reducer(state,action){
                 };
             }
             break;
+        case actions.SET_BG_COLOR:
+            return {
+                Canvas: {
+                    ...state.Canvas,
+                    bgColor: action.payload,
+                }
+            }
         default:
             return state;
     }
@@ -39,6 +48,12 @@ function CanvasStateStore({children}){
         states:state,
         setCanvas:(canvas)=>{
             dispatch({type: actions.SET_CANVAS, payload: canvas});
+        },
+        setLightMode:(color)=>{
+            dispatch({type: actions.SET_BG_COLOR, payload: color})
+        },
+        setDarkMode:(color)=>{
+            dispatch({type: actions.SET_BG_COLOR, payload: color})
         },
     };
 

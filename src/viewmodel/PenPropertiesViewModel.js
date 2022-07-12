@@ -22,7 +22,11 @@ class PenPropertiesViewModel{
     }
 
     getSwatchColor(){
-        return this.propsContext.states.PenProps.color;
+        if(this.propsContext.states.PenProps.color===""){
+            return  localStorage.getItem("mode")==="black"?"#ffffff":"#000000";
+        }else {
+            return  this.propsContext.states.PenProps.color;
+        }
     }
 }
 

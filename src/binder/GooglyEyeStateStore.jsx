@@ -41,7 +41,6 @@ function reducer(state,action){
             }
         default:
             return state;
-
     }
 }
 
@@ -56,7 +55,7 @@ function GooglyEyeStateStore({children}) {
         },
         handleMousePosition:(e)=>{
             dispatch({type: actions.MOUSE_POSITION, payload:e})
-        }
+        },
     }
 
     return(

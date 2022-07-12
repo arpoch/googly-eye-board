@@ -12,12 +12,11 @@ const actions = {
 const initialState = {
     Pen: {
         isPenClicked:false,
+        isDrawing:false,
     },
     Eraser: {
         isEraserClicked:false,
-        properties: {
-            arcRadius: 5,
-        }
+        isErasing:false,
     },
     Background: {
         isBackgroundClicked: false,
@@ -34,11 +33,13 @@ function reducer(state,action){
                 ...state,
                 Pen:{
                     ...state.Pen,
-                    isPenClicked: !state.Pen.isPenClicked
+                    isPenClicked: !state.Pen.isPenClicked,
+                    isDrawing: !state.Pen.isDrawing,
                 },
                 Eraser: {
                     ...state.Eraser,
-                    isEraserClicked: false
+                    isEraserClicked: false,
+                    isErasing: false,
                 },
                 Background: {
                     ...state.Background,
@@ -54,11 +55,13 @@ function reducer(state,action){
                 ...state,
                 Eraser: {
                     ...state.Eraser,
-                    isEraserClicked: !state.Eraser.isEraserClicked
+                    isEraserClicked: !state.Eraser.isEraserClicked,
+                    isErasing: !state.Eraser.isErasing,
                 },
                 Pen:{
                     ...state.Pen,
-                    isPenClicked: false
+                    isPenClicked: false,
+                    isDrawing: false,
                 },
                 Background: {
                     ...state.Background,
@@ -108,18 +111,6 @@ function reducer(state,action){
                     isPenClicked: false,
                 }
             };
-        case actions.ERASER_PROPERTIES:
-            return {
-                ...state,
-                Eraser: {
-                    ...state.Eraser,
-                    properties:{
-                        arcRadius: action.payload,
-                    }
-                }
-            };
-
-
         default:
             return state;
     }
@@ -143,9 +134,6 @@ function SidebarStateStore({children}){
         handleSelection: ()=>{
             dispatch({type:actions.SELECT});
         },
-        handleEraserProperties: (radius)=>{
-          dispatch({type:actions.ERASER_PROPERTIES ,payload:radius})
-        }
     };
 
     return(

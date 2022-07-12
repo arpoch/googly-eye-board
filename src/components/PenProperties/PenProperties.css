@@ -1,4 +1,22 @@
 
+html[theme-mode="dark"]{
+    --pp-btn-color: #fff;
+    --pp-pm-bg-color: rgb(185, 185, 185);
+    --pp-pm-af-color: rgba(185, 185, 185);
+}
+
+html[theme-mode="light"]{
+    --pp-btn-color: #000;
+    --pp-pm-bg-color: rgba(255, 255, 255, 0.34);
+    --pp-pm-af-color: rgb(255, 255, 255);
+}
+
+.ri-pen-props{
+    position: relative;
+    bottom: 4px;
+    color: var(--pp-btn-color);
+}
+
 .pen-menu{
     display: none;
     position: absolute;
@@ -8,7 +26,8 @@
     border-radius: 20px;
     bottom: 130%;
     left: 5%;
-    background-color: rgba(255, 255, 255, 0.34);
+    background-color: var(--pp-pm-bg-color);
+/*    */
 }
 
 .pen-menu:after{
@@ -18,7 +37,7 @@
     left: 5px;
     border-left: 15px solid transparent;
     border-right: 15px solid transparent;
-    border-top: 25px solid white;
+    border-top: 25px solid var(--pp-pm-af-color);
 }
 
 .pen-menu:before{
@@ -56,7 +75,7 @@
 /*    border: 1px solid cornflowerblue;*/
 /*}*/
 
-.line-width{
+.dot-slider-container{
     display: flex;
     flex-direction: row;
     align-items: center;

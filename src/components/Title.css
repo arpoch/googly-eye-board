@@ -1,23 +1,29 @@
+
+.ri-arrow-btn{
+    color: var(--text-color);
+}
+
 .header{
     text-align: center;
     cursor: none;
     display: inline;
-    position: absolute;
-    top: 40%;
-    left: 30%;
-    margin: 0;
+    position: relative;
+    margin: 0 auto;
+    align-self: end;
     /* border: 3px solid red; */
 }
 .title{
     font-size: 5em;
     font-family: Papyrus, fantasy;
-    display: inline;
+    display: inline-block;
+    color: var(--text-color);
+    /*flex: 1 1 0;*/
     /* border: 3px solid red; */
 }
 
 .word{
     display: inline;
-    margin-left: 10px;
+    /*flex: 1 2;*/
     /* border: 3px solid blue; */
 }
 
@@ -27,21 +33,22 @@
     font-size: 3.5em;
     font-family: Papyrus, fantasy;
     background: transparent;
+    color: var(--text-color);
+    max-width: 5em;
+    max-height: 2em;
     /* border-bottom: 2px solid rgba(128, 128, 128, 0.329); */
 }
 #box::placeholder{
     color: rgb(88, 87, 87);
 }
 
-#Page{
-    position: absolute;
-    top: 60%;
-    left: 50%;
-    display: none;
-    background-color: white;
+#next-page-btn{
+    position: relative;
+    margin: 0 auto;
+    height: 2.3em;
+    width: 2.3em;
+    background-color: transparent;
     border: 0;
     border-radius: 2.3em;
-    /*width: 70px;*/
-    /*height: 70px;*/
     /*border: 1px solid black;*/
 }

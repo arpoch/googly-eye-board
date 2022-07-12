@@ -1,0 +1,25 @@
+
+html[theme-mode="dark"]{
+    --btn-color: #fff;
+    --bg-btn-color: #000;
+    --bg-image: linear-gradient(rgb(0, 0, 0) 90%, rgba(184, 182, 182, 0.863));
+}
+
+html[theme-mode="light"]{
+    --btn-color: #000;
+    --bg-btn-color: #fff;
+    --bg-image: linear-gradient(rgb(255, 255, 255) 90%, rgba(184, 182, 182, 0.863));
+}
+
+.props-menu-button{
+    position: relative;
+    padding: 0px;
+    background-color: var(--bg-btn-color);
+    color: var(--btn-color);
+    height: 100%;
+    width: 100%;
+}
+
+.props-menu-button:hover{
+    background-image: var(--bg-image);
+}

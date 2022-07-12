@@ -4,17 +4,17 @@ import './index.css';
 import App from "./components/App";
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter as Router} from "react-router-dom"
-import { Route, Routes} from "react-router";
+import {Route, Routes} from "react-router";
 import Canvas from "./components/Canvas";
-import CanvasStateStore from "./model/CanvasStateStore";
+import CanvasStateStore from "./binder/CanvasStateStore";
 
 ReactDOM.render(
   <React.StrictMode>
       <Router>
           <Routes>
-            <Route path="/" element={<App/>} />
+            <Route path='/' element={<App/>} />
             <Route
-                path="/googly-eye"
+                path="googly-eye"
                 element={
                     <CanvasStateStore>
                         <Canvas/>

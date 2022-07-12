@@ -2,7 +2,7 @@
 .container{
     position: absolute;
     left: 40%;
-    bottom: 1%;
+    bottom: 5px;
     border-radius: 15px;
     background-color: transparent;
     /*border: 1px solid black;*/
@@ -76,4 +76,16 @@
 
 .sidebar-button:hover{
     background-image: linear-gradient(rgb(255, 255, 255) 20%, rgba(184, 182, 182, 0.863));
+}
+
+@media (max-width: 460px)  {
+    .container{
+        left: 25%;
+    }
+}
+
+@media (max-width: 380px)  {
+    .container{
+        left: 20%;
+    }
 }

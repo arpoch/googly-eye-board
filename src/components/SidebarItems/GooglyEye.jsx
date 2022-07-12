@@ -1,10 +1,10 @@
 import './GooglyEye.css';
 import {useContext, useEffect} from "react";
-import {SidebarContext} from "../model/SidebarStateStore";
-import GooglyEyeViewModel from "../viewmodel/GooglyEyeViewModel";
+import {SidebarContext} from "../../binder/SidebarStateStore";
+import GooglyEyeViewModel from "../../viewmodel/GooglyEyeViewModel";
 import {IconContext} from "react-icons";
-import { GrAdd } from "react-icons/all";
-import {GoogleEyeContext} from "../model/GooglyEyeStateStore";
+import { GrAdd } from "react-icons/gr";
+import {GoogleEyeContext} from "../../binder/GooglyEyeStateStore";
 
 function GooglyEye({canvasViewModel}){
 
@@ -22,9 +22,8 @@ function GooglyEye({canvasViewModel}){
             document.getElementsByClassName("message")[0].style.display = "none";
         },{once:true});
 
-        document.getElementsByClassName("canvas")[0].addEventListener("mousemove", (e) =>{
+        document.defaultView.addEventListener("mousemove", (e) =>{
                 googlyEyeViewModel.setIrsPosition(e.clientX,e.clientY);
-                //GooglyEyeViewModel.setMousePosition(e.clientX,e.clientY);
             }
             ,{signal: controller.signal});
         return () => {controller.abort();}

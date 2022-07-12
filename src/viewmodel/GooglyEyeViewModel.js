@@ -37,14 +37,19 @@ class GooglyEyeViewModel {
     }
 
     //Eye Events
+    setBordersToNone(){
+        GooglyEyeViewModel.eyeBallTarget.querySelector(".close-btn").style.display = "none";
+        GooglyEyeViewModel.eyeBallTarget.querySelector(".top-border").style.display = "none";
+        GooglyEyeViewModel.eyeBallTarget.querySelector(".bottom-border").style.display = "none";
+        GooglyEyeViewModel.eyeBallTarget.querySelector(".right-border").style.display = "none";
+        GooglyEyeViewModel.eyeBallTarget.querySelector(".left-border").style.display = "none";
+    }
     setEyeContainerBorders(e){
         if(GooglyEyeViewModel.eyeBallTarget!==null && GooglyEyeViewModel.eyeBallTarget!==e) {
-            GooglyEyeViewModel.eyeBallTarget.querySelector(".top-border").style.display = "none";
-            GooglyEyeViewModel.eyeBallTarget.querySelector(".bottom-border").style.display = "none";
-            GooglyEyeViewModel.eyeBallTarget.querySelector(".right-border").style.display = "none";
-            GooglyEyeViewModel.eyeBallTarget.querySelector(".left-border").style.display = "none";
+            this.setBordersToNone();
         }
         GooglyEyeViewModel.eyeBallTarget = e;
+        e.querySelector(".close-btn").style.display = "block";
         e.querySelector(".top-border").style.display = "block";
         e.querySelector(".bottom-border").style.display = "block";
         e.querySelector(".right-border").style.display = "block";
@@ -53,10 +58,7 @@ class GooglyEyeViewModel {
 
     hideEyeContainerBorders() {
         if(GooglyEyeViewModel.eyeBallTarget!==null && !GooglyEyeViewModel.sidebarContext.states.Select.isSelected) {
-            GooglyEyeViewModel.eyeBallTarget.querySelector(".top-border").style.display = "none";
-            GooglyEyeViewModel.eyeBallTarget.querySelector(".bottom-border").style.display = "none";
-            GooglyEyeViewModel.eyeBallTarget.querySelector(".right-border").style.display = "none";
-            GooglyEyeViewModel.eyeBallTarget.querySelector(".left-border").style.display = "none";
+            this.setBordersToNone();
         }
     }
     selectEyeball(e){
@@ -84,16 +86,8 @@ class GooglyEyeViewModel {
     }
 
     //Border Events
-    moveUp(target,e){
-        // console.log(target);/
-        if(e.clientY<target.y){
-            target.target.closest(".eye-container").style.height=e.clientY+"px";
-        }
-    }
-
-    nsBorderMouseDown(con,et){}
-
-
+    moveUp(e){}
+    nsBorderMouseDown(e){}
     nsBorderMouseUp(e){}
 
     addGoogleEye(){
@@ -115,13 +109,20 @@ class GooglyEyeViewModel {
         //Borders
         const topBorder = document.createElement("div");
         topBorder.className="top-border";
-        // topBorder.onmousedown = (e)=> this.nsBorderMouseDown(this,e);
-        // topBorder.onmouseup = (e)=> this.nsBorderMouseUp(e);
-
         this.googleEye.appendChild(topBorder);
+
+        const closeButton = document.createElement("button");
+        closeButton.className="close-btn";
+        closeButton.addEventListener("click",()=>{
+            GooglyEyeViewModel.eyeBallTarget.remove();
+            GooglyEyeViewModel.eyeBallTarget = null;
+        })
+        this.googleEye.appendChild(closeButton);
+
         const leftBorder =  document.createElement("div");
         leftBorder.className="left-border";
         this.googleEye.appendChild(leftBorder);
+
         const rightBorder = document.createElement("div");
         rightBorder.className="right-border";
         this.googleEye.appendChild(rightBorder);
@@ -166,6 +167,7 @@ class GooglyEyeViewModel {
     }
 
     getX(clientX,EyeX) {
+        console.log(clientX,EyeX)
         if(EyeX<this.getWindowMidX()) {
             let value = (clientX*100/window.innerWidth)+(50-EyeX*100/window.innerWidth);
             return this.checkValue(value)+"%";
@@ -191,14 +193,20 @@ class GooglyEyeViewModel {
 
     static setMousePosition(clientX,clientY){
         GooglyEyeViewModel.context.handleMousePosition({x:clientX, y:clientY });
+
     }
 
     setIrsPosition(x,y) {
         const eyeCon = document.getElementsByClassName("eye-container");
         const irsList = document.getElementsByClassName("Irs");
+
         for(let index = 0;index<irsList.length;index++){
-            irsList[index].style.top = this.getY(y,parseInt(eyeCon[index].style.top));
-            irsList[index].style.left = this.getX(x,parseInt(eyeCon[index].style.left));
+            irsList[index].style.top = this.getY(
+                y,
+                (eyeCon[index].getBoundingClientRect().top));
+            irsList[index].style.left = this.getX(
+                x,
+                (eyeCon[index].getBoundingClientRect().left));
         }
     }
 }

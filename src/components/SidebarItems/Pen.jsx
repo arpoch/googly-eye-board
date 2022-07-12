@@ -1,9 +1,9 @@
 import {IconContext} from "react-icons";
 import {BsPen, BsPenFill} from "react-icons/bs";
 import {useContext, useMemo} from "react";
-import PenViewModel from "../viewmodel/PenViewModel"
-import {SidebarContext} from "../model/SidebarStateStore";
-import {PropsContext} from "../model/PropertiesStateStore";
+import PenViewModel from "../../viewmodel/PenViewModel"
+import {SidebarContext} from "../../binder/SidebarStateStore";
+import {PropsContext} from "../../binder/PropertiesStateStore";
 
 function Pen({canvasViewModel}){
     //TODO Optimise the re-rendering of context
@@ -18,7 +18,6 @@ function Pen({canvasViewModel}){
     }
 
     function setDisplayIcon(){
-        penViewModel.setPenProperties();
         if(penViewModel.getPenClick()){
             penViewModel.startDrawing();
             return <BsPenFill/>

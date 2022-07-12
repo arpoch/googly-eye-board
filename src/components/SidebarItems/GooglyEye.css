@@ -1,14 +1,35 @@
+.eye-container{
+  --eye-border-color: cornflowerblue;
+}
+
 .top-border{
-  border: 1px solid #00b2ff;
+  border: 1px solid var(--eye-border-color);
+  background-color: var(--eye-border-color);
   position: relative;
   float: top;
-  margin-bottom: 3px;
+  margin-bottom: 0px;
   cursor: n-resize;
   display: none;
 }
 
+.close-btn{
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  margin-bottom: 0px;
+  height: 20px;
+  width: 20px;
+  border-radius: 20px;
+  border: 0;
+  display: none;
+  /*background-color: #00ffaf;*/
+  background-image: url("/src/assets/delete-icon.svg");
+}
+
 .left-border{
-  border: 1px solid #00b2ff;
+  border: 1px solid var(--eye-border-color);
+  background-color: var(--eye-border-color);
   position: relative;
   float: left;
   width: 0;
@@ -19,7 +40,8 @@
 }
 
 .right-border{
-  border: 1px solid #00b2ff;
+  border: 1px solid var(--eye-border-color);
+  background-color: var(--eye-border-color);
   position: relative;
   float: right;
   width: 0;
@@ -30,10 +52,11 @@
 }
 
 .bottom-border{
-  border: 1px solid #00b2ff;
+  border: 1px solid var(--eye-border-color);
+  background-color: var(--eye-border-color);
   position: relative;
   float: bottom;
-  margin-top: 4px;
+  margin-top: 2px;
   cursor: s-resize;
   display: none;
 }
@@ -63,9 +86,9 @@
   /*box-sizing: border-box;*/
 }
 
-/*.Eye-ball:hover {*/
-/*  cursor: none;*/
-/*}*/
+.Eye-ball:hover {
+  cursor: none;
+}
 
 .Irs{
   height: 72px;
