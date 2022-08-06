@@ -5,7 +5,6 @@ class PenViewModel{
     sidebarContext = null;
     canvasViewModel = null;
     propsContext = null;
-    // controller = new AbortController();
     static penDraw = false;
     static isDrawing = false;
 
@@ -47,18 +46,17 @@ class PenViewModel{
     startDrawing() {
         PenViewModel.penDraw = true;
         this.setPenProperties();
-        const canvas = document.getElementsByClassName("canvas")[0];
+        const canvas = CanvasViewModel.getCanvasElement();
+        CanvasViewModel.setCursor("PEN");
+        //Events
         canvas.addEventListener("mousedown",
             PenViewModel.penDown,
-            // {signal: this.controller.signal}
         );
         canvas.addEventListener("mousemove",
             PenViewModel.penMove,
-            // {signal: this.controller.signal}
         );
         canvas.addEventListener("mouseup",
             PenViewModel.penUp,
-            // {signal: this.controller.signal}
         );
 
     }
@@ -66,7 +64,8 @@ class PenViewModel{
     stopDrawing() {
         if (!PenViewModel.penDraw)
             return;
-        const canvas = document.getElementsByClassName("canvas")[0];
+        const canvas = CanvasViewModel.getCanvasElement();
+        CanvasViewModel.setCursor("DEFAULT");
         canvas.removeEventListener("mousemove",PenViewModel.penMove);
         canvas.removeEventListener("mousedown",PenViewModel.penDown);
         canvas.removeEventListener("mouseup",PenViewModel.penUp);

@@ -1,5 +1,6 @@
 
 .canvas{
     display: block;
+    cursor: pointer;
     /*background-color: var(--bg-color);*/
 }

@@ -44,7 +44,8 @@ class EraserViewModel{
     }
 
     startErasing(){
-        const canvas = document.getElementsByClassName("canvas")[0];
+        const canvas = CanvasViewModel.getCanvasElement();
+        CanvasViewModel.setCursor("ERASER");
         canvas.addEventListener("mousedown",
             EraserViewModel.eraserDown,
         );
@@ -56,13 +57,13 @@ class EraserViewModel{
         );
         EraserViewModel.eraser = true;
         this.setEraserProperties();
-        // this.canvasViewModel.startErasing(this.getEraserClick());
     }
 
     stopErasing(){
         if(!EraserViewModel.eraser)
             return;
-        const canvas = document.getElementsByClassName("canvas")[0];
+        const canvas = CanvasViewModel.getCanvasElement();
+        CanvasViewModel.setCursor("DEFAULT");
         canvas.removeEventListener("mousemove",EraserViewModel.eraserMove);
         canvas.removeEventListener("mousedown",EraserViewModel.eraserDown);
         canvas.removeEventListener("mouseup",EraserViewModel.eraserUp);

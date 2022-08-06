@@ -12,7 +12,11 @@ class ModeViewModel {
     }
 
     isDarkMode(){
-        return localStorage.getItem("mode") === "black";
+        if(localStorage.getItem("mode")==null){
+            return window.matchMedia('(prefers-color-scheme: dark)').matches;
+        }else {
+            return localStorage.getItem("mode") === "black";
+        }
     }
 }
 

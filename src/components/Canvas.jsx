@@ -12,6 +12,12 @@ function Canvas() {
     const canvasViewModel = new CanvasViewModel(canvasContext);
 
     useEffect(()=>{
+        if(localStorage.getItem("mode")==="black"){
+            document.documentElement.setAttribute("theme-mode","dark");
+        }else{
+            document.documentElement.setAttribute("theme-mode","light");
+        }
+
         window.addEventListener("resize",()=>{
             if(ref.current!=null){
                 ref.current.width = window.innerWidth;
@@ -21,20 +27,13 @@ function Canvas() {
     },[]);
 
     const canvasRef = useCallback((current)=>{
-        function setAttributes(){
-            if(localStorage.getItem("mode")==="black"){
-                document.documentElement.setAttribute("theme-mode","dark");
-            }else{
-                document.documentElement.setAttribute("theme-mode","light");
-            }
-        }
 
         if(current!=null && ref.current!==current) {
             ref.current = current;
             current.width = window.innerWidth;
             current.height = window.innerHeight;
             current.style.backgroundColor = localStorage.getItem("mode");
-            setAttributes();
+            CanvasViewModel.setCanvasElement(current);
             const context = current.getContext('2d');
             CanvasViewModel.setCanvas(context);
         }
@@ -46,9 +45,6 @@ function Canvas() {
                 className="canvas"
                 ref={canvasRef}
                 style={{position: "relative"}}
-                onMouseMove={canvasViewModel.handleMouseMoves}
-                onMouseDown={canvasViewModel.handleMouseDown}
-                onMouseUp={canvasViewModel.handleMouseUp}
             />
             {(CanvasViewModel.getCanvas()!=null)
                 ?

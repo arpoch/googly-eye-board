@@ -10,20 +10,12 @@ function DarkMode() {
     const modeContext = useContext(ModeContext);
     const modeViewModel = new ModeViewModel(modeContext);
 
-    function isDarkMode(){
-        if(localStorage.getItem("mode")==null){
-            return window.matchMedia('(prefers-color-scheme: dark)').matches;
-        }else {
-            return localStorage.getItem("mode") === "black";
-        }
-    }
-
     function handleClick(){
         modeViewModel.getThemeMode();
     }
 
     function showIcon() {
-        if(isDarkMode()){
+        if(modeViewModel.isDarkMode()){
             document.documentElement.setAttribute("theme-mode","dark");
             return <FiMoon />
         }else {

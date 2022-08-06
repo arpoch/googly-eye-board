@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from "./components/App";
 import reportWebVitals from './reportWebVitals';
-import {BrowserRouter as Router} from "react-router-dom"
+import {HashRouter as Router} from "react-router-dom"
 import {Route, Routes} from "react-router";
 import Canvas from "./components/Canvas";
 import CanvasStateStore from "./binder/CanvasStateStore";
@@ -12,9 +12,9 @@ ReactDOM.render(
   <React.StrictMode>
       <Router>
           <Routes>
-            <Route path='/' element={<App/>} />
+            <Route path='' element={<App/>} />
             <Route
-                path="googly-eye"
+                path="canvas"
                 element={
                     <CanvasStateStore>
                         <Canvas/>
