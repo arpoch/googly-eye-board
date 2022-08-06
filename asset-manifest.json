@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/googly-eye-board/static/css/main.2f1d360d.chunk.css",
-    "main.js": "/googly-eye-board/static/js/main.d8456a94.chunk.js",
-    "main.js.map": "/googly-eye-board/static/js/main.d8456a94.chunk.js.map",
+    "main.css": "/googly-eye-board/static/css/main.ae7869fc.chunk.css",
+    "main.js": "/googly-eye-board/static/js/main.37434496.chunk.js",
+    "main.js.map": "/googly-eye-board/static/js/main.37434496.chunk.js.map",
     "runtime-main.js": "/googly-eye-board/static/js/runtime-main.f8d25586.js",
     "runtime-main.js.map": "/googly-eye-board/static/js/runtime-main.f8d25586.js.map",
     "static/js/2.f3083881.chunk.js": "/googly-eye-board/static/js/2.f3083881.chunk.js",
@@ -10,14 +10,14 @@
     "static/js/3.e459a6f7.chunk.js": "/googly-eye-board/static/js/3.e459a6f7.chunk.js",
     "static/js/3.e459a6f7.chunk.js.map": "/googly-eye-board/static/js/3.e459a6f7.chunk.js.map",
     "index.html": "/googly-eye-board/index.html",
-    "static/css/main.2f1d360d.chunk.css.map": "/googly-eye-board/static/css/main.2f1d360d.chunk.css.map",
+    "static/css/main.ae7869fc.chunk.css.map": "/googly-eye-board/static/css/main.ae7869fc.chunk.css.map",
     "static/js/2.f3083881.chunk.js.LICENSE.txt": "/googly-eye-board/static/js/2.f3083881.chunk.js.LICENSE.txt",
     "static/media/GooglyEye.css": "/googly-eye-board/static/media/delete-icon.b6a06207.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.f8d25586.js",
     "static/js/2.f3083881.chunk.js",
-    "static/css/main.2f1d360d.chunk.css",
-    "static/js/main.d8456a94.chunk.js"
+    "static/css/main.ae7869fc.chunk.css",
+    "static/js/main.37434496.chunk.js"
   ]
 }
